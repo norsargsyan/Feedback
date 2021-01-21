@@ -6,7 +6,7 @@ namespace Core;
 
 class View
 {
-    public function getTemplate($temName)
+    public function getTemplate($temName, $status = null, $errors = null)
     {
         $temName = "../App/Views/template/$temName";
         if(file_exists($temName))

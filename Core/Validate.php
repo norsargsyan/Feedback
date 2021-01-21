@@ -43,17 +43,13 @@ abstract class Validate
         }
         if(count($errors) == 0)
         {
-            return [$name, $lname, $email, $message];
+            return [true ,$name, $lname, $email, $message];
         }
         else
         {
-            return false;
+            return [false, $errors];
         }
 
-
-    }
-    public function failed()
-    {
 
     }
 }

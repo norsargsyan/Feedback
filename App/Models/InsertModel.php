@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use App\Controllers\ValidateController;
+use Core\Validate;
+
 class InsertModel extends \Core\Model
 {
     public function insertMessage($messageData)
@@ -9,13 +12,19 @@ class InsertModel extends \Core\Model
         $pdo = \Core\Model::dbConnect();
         try {
             $state = $pdo->prepare("INSERT INTO `message` (`name`, `last_name`, `email`, `message`, `date`, `ip`)
-                    VALUES(?, ?, ?, ?, ?, ?)");
-            var_dump($state);
-            $result = $state->execute(array($messageData[0], $messageData[1], $messageData[2], $messageData[3], date_default_timezone_get(), $_SERVER['REMOTE_ADDR']));
+                    VALUES(?,?,?,?,?,?)");
+
+            $statusMessage = $state->execute(array($messageData[0], $messageData[1], $messageData[2], $messageData[3], date("Y-m-d h:i:sa") , ''));
+            if($statusMessage)
+            {
+                return true;
+            }
+            else{
+                return false;
+            }
+
         }catch (PDOException $exception){
             echo $exception->getMessage();
         }
-        var_dump($result);
-
     }
 }

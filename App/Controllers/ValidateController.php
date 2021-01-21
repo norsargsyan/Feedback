@@ -4,6 +4,8 @@
 namespace App\Controllers;
 
 
+use App\Views\HomeView;
+
 class ValidateController extends \Core\Validate
 {
 
@@ -11,15 +13,21 @@ class ValidateController extends \Core\Validate
     {
         if (isset($_POST['message_send'])) {
             $messageData = $this->checkMessage();
-            if($messageData)
+            $sendStatus = false;
+            if($messageData[0])
             {
                 $insert = new \App\Models\InsertModel;
-                $insert->insertMessage($messageData);
+                $sendStatus = $insert->insertMessage($messageData);
             }
-            else{
-//                VALIDACIYAN CHANCNELU DEPQ
-            }
+            $homeView = new \Core\View;
+            $homeView->getTemplate('feedback.php', $sendStatus,  $messageData);
+        }
+        else if(isset($_POST['login_button']))
+        {
+
+        }
+        else{
+            \Core\Router::get404();
         }
     }
-
 }

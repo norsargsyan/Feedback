@@ -6,20 +6,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="173dc317-359c-42f5-a7b6-f2ca9c30b626" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/App/Controllers/ValidateController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Models/InsertModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Model.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Validate.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Models/Article.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Models/News.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Models/Product.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/SignController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/SignController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/ValidateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/ValidateController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Models/InsertModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/InsertModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Views/HomeView.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/HomeView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/SignView.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/SignView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/template/authorisation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/template/feedback.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Db.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/template/authorisation.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/template/authorisation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/template/feedback.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/template/feedback.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Validate.php" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Validate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/Core/View.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/template/css/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/css/style.min.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +57,7 @@
       <workItem from="1610953139606" duration="548000" />
       <workItem from="1610953719418" duration="2436000" />
       <workItem from="1611210555153" duration="44000" />
-      <workItem from="1611210602071" duration="9400000" />
+      <workItem from="1611210602071" duration="20499000" />
     </task>
     <servers />
   </component>
@@ -111,6 +107,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611234105689">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1611234105689" />
     <state x="531" y="150" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1611142087098">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -119,6 +119,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1611210596517" />
+    <state width="232" height="203" key="Git.Branch.Popup" timestamp="1611231538500">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="232" height="203" key="Git.Branch.Popup/0.0.1366.728@0.0.1366.728" timestamp="1611231538500" />
     <state x="474" y="87" key="NewPhpClassDialog" timestamp="1611215731778">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -127,28 +131,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1611143733813" />
-    <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1611145256351">
+    <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1611234548453">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1611145256351" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1611217594705">
+    <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1611234548453" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1611226159935">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1611217594705" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1611226159935" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1611216378966">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1611216378966" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/App/Controllers/HomeController.php</url>
-          <line>11</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

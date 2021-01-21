@@ -32,6 +32,23 @@
                             <div class="input-group submit-elem get-indent">
                                 <input type="submit" value="Send" name="message_send" class="button-fill">
                             </div>
+
+                            <?php
+
+                            if(isset($errors) && !$errors[0]) {
+                                echo '<div class="error-message">';
+                                foreach ($errors[1] as $value) {
+                                    echo '- ' . $value . '</br>';
+                                }
+                                echo '</div>';
+                            }
+                            if(isset($status) && $status == true){
+                                echo '<div class="success-message">';
+                                echo 'your message was successfully sent';
+                                echo '</div>';
+                            }
+                            ?>
+                            </div>
                         </form>
 
                     </div>

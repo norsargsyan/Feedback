@@ -15,7 +15,7 @@
           <div class="form-section__inner">
             <h1 class="form-section__title">Login</h1>
             <div class="form-section__restrict">
-              <form action="/validate">
+              <form action="/sign" method="POST">
                <div class="form-input-group">
                 <div class="input-group">
                   <input type="text" class="input-text" placeholder="Username">
@@ -28,7 +28,7 @@
                 </div>
                 </div>
                 <div class="input-group submit-elem get-indent">
-                  <input type="submit" value="Войти" class="button-fill">
+                  <input type="submit" value="Войти" name="login_button" class="button-fill">
                 </div>
                 </form>
 
