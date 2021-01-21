@@ -6,7 +6,7 @@ class SignView extends \Core\View
 {
     public function getLogin()
     {
-        $this->getTemplate('authorisation.html');
+        $this->getTemplate('authorisation.php');
     }
 
 }

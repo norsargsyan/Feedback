@@ -9,7 +9,7 @@ class HomeView extends \Core\View
 
     public function __construct()
     {
-        $this->getTemplate('feedback.html');
+        $this->getTemplate('feedback.php');
     }
     public function index()
     {

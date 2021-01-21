@@ -6,24 +6,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="173dc317-359c-42f5-a7b6-f2ca9c30b626" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Controllers/HomeController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Controllers/SignController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Views/HomeView.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Views/template/authorisation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/View.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/template/css/style.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controllers/ArticleController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controllers/ProductController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/news/archive.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/SignView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/news/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/news/view.php" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Controllers/ValidateController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Models/InsertModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Model.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Validate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Models/Article.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Models/News.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Models/Product.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/HomeView.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/HomeView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/SignView.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/SignView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/template/authorisation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/template/feedback.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Db.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/images/img07.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/images/pic01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/images/pic02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/template/css/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/css/style.min.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +41,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -62,6 +60,8 @@
       <updated>1610953138160</updated>
       <workItem from="1610953139606" duration="548000" />
       <workItem from="1610953719418" duration="2436000" />
+      <workItem from="1611210555153" duration="44000" />
+      <workItem from="1611210602071" duration="9400000" />
     </task>
     <servers />
   </component>
@@ -115,10 +115,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="531" y="150" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1611142087098" />
-    <state x="474" y="87" key="NewPhpClassDialog" timestamp="1611143764559">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1611210596517">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="474" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1611143764559" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1611210596517" />
+    <state x="474" y="87" key="NewPhpClassDialog" timestamp="1611215731778">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="474" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1611215731778" />
     <state x="517" y="287" key="NewPhpFileDialog" timestamp="1611143733813">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -127,10 +131,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1611145256351" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1611146644918">
+    <state x="339" y="162" key="run.anything.popup" timestamp="1611217594705">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1611146644918" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1611217594705" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1611216378966">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1611216378966" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -5,8 +5,6 @@ Namespace Core;
 class Router
 {
 
-	private $routes;
-
 	public function __construct()
 	{
         $uri = trim($_SERVER['REQUEST_URI'], '/');

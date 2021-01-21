@@ -14,7 +14,7 @@
                 <div class="form-section__inner">
                     <h1 class="form-section__title">Feedback</h1>
                     <div class="form-section__restrict">
-                        <form action="">
+                        <form action="/validate" method="POST">
                             <div class="form-input-group">
                                 <div class="input-group">
                                     <input type="text" class="input-text" name="fname" placeholder="First Name">
@@ -30,7 +30,7 @@
                                 </div>
                             </div>
                             <div class="input-group submit-elem get-indent">
-                                <input type="submit" value="Send" class="button-fill">
+                                <input type="submit" value="Send" name="message_send" class="button-fill">
                             </div>
                         </form>
 

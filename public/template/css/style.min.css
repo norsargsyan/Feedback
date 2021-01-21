@@ -1096,7 +1096,7 @@ a {
         padding-bottom: 0;
     }
     .form-section {
-        min-height: calc(100vh - 140px);
+        min-height: 100vh;
         display: flex;
         align-items: center;
         padding-bottom: 40px;
