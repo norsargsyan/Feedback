@@ -18,18 +18,23 @@
               <form action="/sign" method="POST">
                <div class="form-input-group">
                 <div class="input-group">
-                  <input type="text" class="input-text" placeholder="Username">
+                  <input type="text" class="input-text" name="username" placeholder="Username">
                 </div>
                 <div class="input-group">
-                  <input type="password" class="input-text" placeholder="Password">
-                </div>
-                <div class="input-group checkbox-elem">
-                  <input type="checkbox" id="auth-check"><label for="auth-check">Remember me</label>
+                  <input type="password" class="input-text" name="password" placeholder="Password">
                 </div>
                 </div>
                 <div class="input-group submit-elem get-indent">
                   <input type="submit" value="Войти" name="login_button" class="button-fill">
                 </div>
+                  <?php
+                    if(!$status)
+                    {
+                        echo '<div class="error-message">';
+                        echo 'Wrong Username or password';
+                        echo '</div>';
+                    }
+                  ?>
                 </form>
 
               </div>

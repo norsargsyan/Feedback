@@ -22,10 +22,6 @@ class ValidateController extends \Core\Validate
             $homeView = new \Core\View;
             $homeView->getTemplate('feedback.php', $sendStatus,  $messageData);
         }
-        else if(isset($_POST['login_button']))
-        {
-
-        }
         else{
             \Core\Router::get404();
         }

@@ -4,7 +4,6 @@ namespace Core;
 use PDO;
 class Model
 {
-
     public static function dbConnect()
     {
         $hostname = "localhost";

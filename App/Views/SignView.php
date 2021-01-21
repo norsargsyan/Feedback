@@ -4,9 +4,9 @@ namespace App\Views;
 
 class SignView extends \Core\View
 {
-    public function getLogin()
+    public function getLogin($status)
     {
-        $this->getTemplate('authorisation.php');
+        $this->getTemplate('authorisation.php', false);
     }
 
 }
