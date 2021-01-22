@@ -11,10 +11,10 @@ class InsertModel extends \Core\Model
     {
         $pdo = \Core\Model::dbConnect();
         try {
-            $state = $pdo->prepare("INSERT INTO `message` (`name`, `last_name`, `email`, `message`, `date`, `ip`)
-                    VALUES(?,?,?,?,?,?)");
+            $state = $pdo->prepare("INSERT INTO `message` (`name`, `last_name`, `email`, `message`, `date`)
+                    VALUES(?,?,?,?,?)");
 
-            $statusMessage = $state->execute(array($messageData[0], $messageData[1], $messageData[2], $messageData[3], date("Y-m-d h:i:sa") , ''));
+            $statusMessage = $state->execute(array($messageData[1], $messageData[2], $messageData[3], $messageData[4], date("Y-m-d h:i:sa") ));
             if($statusMessage)
             {
                 return true;

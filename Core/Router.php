@@ -4,7 +4,7 @@ Namespace Core;
 
 class Router
 {
-
+    public $itemNum;
 	public function __construct()
 	{
         $uri = trim($_SERVER['REQUEST_URI'], '/');
@@ -25,12 +25,14 @@ class Router
                 $actionName = $uri[1];
             }
         }
-
 	    $controller = ucfirst($controllerName) . "Controller";
         $controller = "App\Controllers\\$controller";
         if(class_exists($controller)) {
             $controller = new $controller;
-            if(method_exists($controller, $actionName)){
+            if(method_exists($controller, $actionName) && isset($uri[2])){
+                $controller->$actionName($uri[2]);
+            }
+            elseif(method_exists($controller, $actionName)){
                 $controller->$actionName();
             }
             else{
@@ -46,6 +48,7 @@ class Router
 	public static function get404()
     {
         echo '404 error page';
+        die();
     }
 
 }
