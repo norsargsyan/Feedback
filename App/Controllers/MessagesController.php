@@ -31,4 +31,14 @@ class MessagesController
             $view->getOneMessage($messageData);
         }
     }
+    public function delete($id)
+    {
+        $model = new \App\Models\MessagesModel;
+        $model->getDelete($id);
+    }
+    public function readed($id)
+    {
+        $model = new \App\Models\MessagesModel;
+        $model->getReadedToggle($id);
+    }
 }

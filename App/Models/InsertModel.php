@@ -10,6 +10,7 @@ class InsertModel extends \Core\Model
     public function insertMessage($messageData)
     {
         $pdo = \Core\Model::dbConnect();
+        date_default_timezone_set ('Asia/Yerevan');
         try {
             $state = $pdo->prepare("INSERT INTO `message` (`name`, `last_name`, `email`, `message`, `date`)
                     VALUES(?,?,?,?,?)");

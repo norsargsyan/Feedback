@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<!-- saved from url=(0038)https://norsargsyan.github.io/service/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ЛК автоматизация сетевого бизнеса</title>
-  <link rel="stylesheet" href="/template/css/style.min.css">
-</head>
-<body>
-  <div class="wrapper">
     <main class="auth-main">
       <section class="auth-section">
         <div class="form-section">
@@ -36,16 +26,8 @@
                     }
                   ?>
                 </form>
-
               </div>
-
-
           </div>
         </div>
       </section>
     </main>
-
-  </div>
-
-</body>
-    </html>

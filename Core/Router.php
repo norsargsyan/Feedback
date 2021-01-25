@@ -47,7 +47,8 @@ class Router
 
 	public static function get404()
     {
-        echo '404 error page';
+        $view = new \App\Views\ErrorView;
+        $view->index();
         die();
     }
 
