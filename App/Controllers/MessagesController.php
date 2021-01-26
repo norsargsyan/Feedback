@@ -3,7 +3,7 @@
 
 namespace App\Controllers;
 
-class MessagesController
+class MessagesController extends \Core\Controller
 {
     public function __construct()
     {
@@ -14,11 +14,33 @@ class MessagesController
     }
     public function index()
     {
-        $messages = new \App\Models\MessagesModel;
-        $messages->getMessages();
-        $view = new \App\Views\MessagesView;
-        $view->getMessages($messages->messagesList);
+        $this->page(1);
     }
+
+    public function paginationStatus($messageList)
+    {
+        return ceil($messageList / $this->messagePerPage);
+    }
+
+    public function page($pageNumber = null)
+    {
+        if($pageNumber == null)
+        {
+            \Core\Router::get404();
+        }
+        else {
+            $messages = new \App\Models\MessagesModel;
+            $messages->getMessages($pageNumber, $this->messagePerPage);
+            $pageCount = $this->paginationStatus($messages->getMessagesCount());
+            $view = new \App\Views\MessagesView;
+            $pageInfo = array(
+                'page-count' => $pageCount,
+                'current-page' => $pageNumber,
+            );
+            $view->getMessages($messages->messagesList, $pageInfo);
+        }
+    }
+
     public function read($id = null)
     {
         if(!isset($id) || $id == '' || $id == null){

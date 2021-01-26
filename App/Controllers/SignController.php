@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class SignController
+class SignController extends \Core\Controller
 {
     public function index()
     {

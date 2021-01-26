@@ -12,11 +12,11 @@
                             <div class="message-item-info">
                                 <a href="/messages/read/<?php echo $item['id']; ?>">
                                     <div class="message-item-info__inner">
-                                        <span><?php echo ++$index; ?></span>
-                                        <span><?php echo $item['name']; ?></span>
-                                        <span><?php echo $item['last_name']; ?></span>
-                                        <span><?php echo $item['email']; ?></span>
-                                        <span><?php echo substr($item['date'], 0,-5); ?></span>
+                                        <span class="contain-small"><?php echo ++$index; ?></span>
+                                        <span class="contain-normal"><?php echo $item['name']; ?></span>
+                                        <span class="contain-normal"><?php echo $item['last_name']; ?></span>
+                                        <span class="contain-large"><?php echo $item['email']; ?></span>
+                                        <span class="contain-large"><?php echo substr($item['date'], 0,-5); ?></span>
                                     </div></a>
                                 <span>
                                         <img src="/template/img/<?php if($item['status'] == 0) echo 'email'; else echo 'email-green'; ?>.svg" title="Mark as read" class="read-icon" width="24px"  data-id="<?php echo $item['id']; ?>" alt="icon">
@@ -38,6 +38,16 @@
                             </a>
                         </div>
                     <?php endforeach; ?>
+
+                    <div class="pagination p1">
+                        <ul>
+                            <a href="/messages/page/<?php echo $pageInfo['current-page'] - 1; ?>"><li>&#x25c0;</li></a>
+                            <?php for($i = 0; $i < $pageInfo['page-count']; $i++):  ?>
+                                <a class="<?php if($pageInfo['current-page'] == $i + 1) echo 'is-active'; ?>" href="/messages/page/<?php echo $i + 1; ?>"><li><?php echo $i + 1; ?></li></a>
+                            <?php endfor; ?>
+                            <a href="/messages/page/<?php echo $pageInfo['current-page'] + 1; ?>"><li>&#x25ba;</li></a>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

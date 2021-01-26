@@ -8,11 +8,11 @@ class MessagesModel extends \Core\Model
 {
     public $messagesList = array();
     public static $emptyList;
-    public function getMessages()
+    public function getMessages($pageNumber, $messagePerPage)
     {
         $pdo = self::dbConnect();
-
-        $state = $pdo->prepare("SELECT * FROM `message` ORDER BY `DATE` DESC");
+        $leftLimit = $messagePerPage * ($pageNumber - 1);
+        $state = $pdo->prepare("SELECT * FROM `message` ORDER BY `DATE` DESC LIMIT $leftLimit, $messagePerPage");
         $state->execute();
 
         while ($row = $state->fetch())
@@ -24,9 +24,15 @@ class MessagesModel extends \Core\Model
             self::$emptyList = true;
         }
     }
+    public function getMessagesCount()
+    {
+        $pdo = \Core\Model::dbConnect();
+        $state = $pdo->prepare("SELECT * FROM `message`");
+        $state->execute();
+        return $state->rowCount();
+    }
     public function getRead($id)
     {
-
         $pdo = \Core\Model::dbConnect();
         $state = $pdo->prepare("SELECT * FROM `message` WHERE `id` = ? ");
         $state->execute([$id]);
@@ -37,7 +43,6 @@ class MessagesModel extends \Core\Model
         else {
             $state = $pdo->prepare("UPDATE `message` SET `STATUS` = 1 WHERE `id` = ? ");
             $state->execute([$id]);
-
             return $data;
         }
     }
@@ -57,7 +62,7 @@ class MessagesModel extends \Core\Model
         if($status == 0) $status = 1;
         else $status = 0;
         $state = $pdo->prepare("UPDATE `message` SET `STATUS` = ? WHERE `id` = ? ");
-        $readedStatus = $state->execute([$status, $id]);
+        $state->execute([$status, $id]);
         echo $status;
 
     }

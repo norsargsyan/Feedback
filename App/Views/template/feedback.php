@@ -35,7 +35,7 @@
                             }
                             if(isset($status) && $status == true){
                                 echo '<div class="success-message">';
-                                echo 'your message was successfully sent';
+                                echo 'Your message was successfully sent';
                                 echo '</div>';
                             }
                             ?>

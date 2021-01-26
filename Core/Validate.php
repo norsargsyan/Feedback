@@ -14,7 +14,6 @@ abstract class Validate
         $errors = array();
         if(!preg_match("/^[a-z ]+$/i", $name))
         {
-            echo $name;
             array_push($errors, 'Wrong First name format');
         }
         if(!preg_match("/^[a-z ]+$/i", $lname))
