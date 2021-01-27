@@ -9,13 +9,11 @@ use App\Views\HomeView;
 class ValidateController extends \Core\Validate
 {
 
-    public function index()
-    {
+    public function index(){
         if (isset($_POST['message_send'])) {
             $messageData = $this->checkMessage();
             $sendStatus = false;
-            if($messageData[0])
-            {
+            if($messageData[0]){
                 $insert = new \App\Models\InsertModel;
                 $sendStatus = $insert->insertMessage($messageData);
             }

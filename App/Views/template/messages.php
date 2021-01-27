@@ -41,11 +41,15 @@
 
                     <div class="pagination p1">
                         <ul>
+                            <?php if($pageInfo['current-page'] - 1 != 0): ?>
                             <a href="/messages/page/<?php echo $pageInfo['current-page'] - 1; ?>"><li>&#x25c0;</li></a>
+                            <?php endif; ?>
                             <?php for($i = 0; $i < $pageInfo['page-count']; $i++):  ?>
                                 <a class="<?php if($pageInfo['current-page'] == $i + 1) echo 'is-active'; ?>" href="/messages/page/<?php echo $i + 1; ?>"><li><?php echo $i + 1; ?></li></a>
                             <?php endfor; ?>
+                            <?php if($pageInfo['current-page'] != $pageInfo['page-count']): ?>
                             <a href="/messages/page/<?php echo $pageInfo['current-page'] + 1; ?>"><li>&#x25ba;</li></a>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>

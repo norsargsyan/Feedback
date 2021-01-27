@@ -4,8 +4,7 @@ namespace App\Controllers;
 
 class SignController extends \Core\Controller
 {
-    public function index()
-    {
+    public function index(){
         if(!isset($_SESSION['id'])) {
             $sign = new \App\Views\SignView;
             if (isset($_POST['login_button'])) {
@@ -15,12 +14,14 @@ class SignController extends \Core\Controller
                 $loginStatus = $signIn->signIn($username, $password);
                 if (!$loginStatus) {
                     $sign->getLogin(false);
-                } else {
+                }
+                else {
                     $_SESSION['id'] = $loginStatus['id'];
                     $_SESSION['username'] = $loginStatus['username'];
                     header('Location: /messages');
                 }
-            } else {
+            }
+            else {
                 $sign->getLogin();
             }
         }
@@ -28,14 +29,12 @@ class SignController extends \Core\Controller
             header('Location: /messages');
         }
     }
-    public function signout()
-    {
+    public function signout(){
         $this->unsetSession('id');
         $this->unsetSession('username');
         header('Location: /sign');
     }
-    public function unsetSession($sessionName)
-    {
+    public function unsetSession($sessionName){
         if(isset($_SESSION[$sessionName])){
             unset($_SESSION[$sessionName]);
         }

@@ -5,14 +5,12 @@ Namespace Core;
 class Router
 {
     public $itemNum;
-	public function __construct()
-	{
+	public function __construct(){
         $uri = trim($_SERVER['REQUEST_URI'], '/');
         $this->run(explode('/', $uri));
 	}
 
-	public function run($uri)
-	{
+	public function run($uri){
 	    if($uri[0] == '') {
             $controllerName = 'Home';
         }
@@ -38,15 +36,13 @@ class Router
             else{
                 $this->get404();
             }
-
         }
         else{
             $this->get404();
         }
 	}
 
-	public static function get404()
-    {
+	public static function get404(){
         $view = new \App\Views\ErrorView;
         $view->index();
         die();

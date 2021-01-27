@@ -6,8 +6,7 @@ use PDOException;
 
 class Model
 {
-    public static function dbConnect()
-    {
+    public static function dbConnect(){
         $hostname = "localhost";
         $username = "root";
         $password = "";
@@ -16,11 +15,11 @@ class Model
         try {
             $connection = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
             $status = $connection->getAttribute(PDO::ATTR_CONNECTION_STATUS);
-            if($status)
-            {
+            if($status){
                 return $connection;
             }
-        } catch (PDOException $e) {
+        }
+        catch (PDOException $e) {
             $connection = new PDO("mysql:host=$hostname;", $username, $password);
             $templine = '';
             $lines = file('CreateDB.sql');
@@ -35,13 +34,10 @@ class Model
             }
             $connection = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
             $status = $connection->getAttribute(PDO::ATTR_CONNECTION_STATUS);
-            if($status)
-            {
+            if($status){
                 return $connection;
             }
             self::dbConnect();
         }
-
     }
-
 }

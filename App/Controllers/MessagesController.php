@@ -5,33 +5,28 @@ namespace App\Controllers;
 
 class MessagesController extends \Core\Controller
 {
-    public function __construct()
-    {
-        if(!isset($_SESSION['id']))
-        {
+    public function __construct(){
+        if(!isset($_SESSION['id'])){
             \Core\Router::get404();
         }
     }
-    public function index()
-    {
+    public function index(){
         $this->page(1);
     }
 
-    public function paginationStatus($messageList)
-    {
+    public function paginationStatus($messageList){
         return ceil($messageList / $this->messagePerPage);
     }
 
-    public function page($pageNumber = null)
-    {
-        if($pageNumber == null)
-        {
+    public function page($pageNumber = null){
+        if($pageNumber == null || !preg_match("/^[0-9 ]+$/i", $pageNumber)){
             \Core\Router::get404();
         }
         else {
             $messages = new \App\Models\MessagesModel;
+            $messageCount = $messages->getMessagesCount();
             $messages->getMessages($pageNumber, $this->messagePerPage);
-            $pageCount = $this->paginationStatus($messages->getMessagesCount());
+            $pageCount = $this->paginationStatus($messageCount);
             $view = new \App\Views\MessagesView;
             $pageInfo = array(
                 'page-count' => $pageCount,
@@ -41,8 +36,7 @@ class MessagesController extends \Core\Controller
         }
     }
 
-    public function read($id = null)
-    {
+    public function read($id = null){
         if(!isset($id) || $id == '' || $id == null){
             \Core\Router::get404();
         }
@@ -53,13 +47,11 @@ class MessagesController extends \Core\Controller
             $view->getOneMessage($messageData);
         }
     }
-    public function delete($id)
-    {
+    public function delete($id){
         $model = new \App\Models\MessagesModel;
         $model->getDelete($id);
     }
-    public function readed($id)
-    {
+    public function readed($id){
         $model = new \App\Models\MessagesModel;
         $model->getReadedToggle($id);
     }

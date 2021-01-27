@@ -5,8 +5,7 @@ namespace App\Controllers;
 class HomeController extends \Core\Controller
 {
 
-    public function index()
-    {
+    public function index(){
         $homeView = new \App\Views\HomeView;
         $homeView->index();
     }
