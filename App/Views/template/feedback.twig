@@ -23,22 +23,21 @@
                             <div class="input-group submit-elem get-indent">
                                 <input type="submit" value="Send" name="message_send" class="button-fill">
                             </div>
+                            {% if data.errors is defined and data.errors is not null %}
+                                {% for value in data.errors[1] %}
+                                    <div class="error-message">
 
-                            <?php
+                                    -{{ value }} </br>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
 
-                            if(isset($errors) && !$errors[0]) }
-                                echo '<div class="error-message">';
-                                foreach ($errors[1] as $value) }
-                                    echo '- ' . $value . '</br>';
-                                }
-                                echo '</div>';
-                            }
-                            if(isset($status) && $status == true)}
-                                echo '<div class="success-message">';
-                                echo 'Your message was successfully sent';
-                                echo '</div>';
-                            }
-                            ?>
+                            {% if data.status is defined and  data.status == true %}
+                                <div class="success-message">
+                                 Your message was successfully sent
+                                </div>
+                            {% endif %}
+
                             </div>
                         </form>
                     </div>

@@ -2,10 +2,12 @@
 
 namespace App\Views;
 
-class SignView extends \Core\View
-{
-    public function getLogin($status = true){
-        $this->getTemplate('authorisation.php', $status);
-    }
+use Core\View;
+
+class SignView extends View {
+
+  public function getLogin($status = TRUE) {
+    $this->getTemplate('authorisation.twig', $status);
+  }
 
 }

@@ -4,11 +4,12 @@
 namespace App\Views;
 
 
-class HomeView extends \Core\View
-{
+use Core\View;
 
-    public function index(){
-        $this->getTemplate('feedback.php');
-    }
+class HomeView extends View {
+
+  public function index() {
+    $this->getTemplate('feedback.twig');
+  }
 
 }

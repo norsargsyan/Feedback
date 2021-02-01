@@ -4,9 +4,12 @@
 namespace App\Views;
 
 
-class ErrorView extends \Core\View
-{
-    public function index(){
-        $this->getTemplate('error-page.php');
-    }
+use Core\View;
+
+class ErrorView extends View {
+
+  public function index() {
+    $this->getTemplate('error-page.twig');
+  }
+
 }

@@ -4,28 +4,33 @@
 namespace Core;
 
 
-class View
-{
-    public function getTemplate($temName, $status = null, $errors = null, $messageData = null, $pageInfo = null){
-        $temName = "../App/Views/template/$temName";
-        $data = array(
-            'templateName' => $temName,
-            'status' => $status,
-            'errors' => $errors,
-            'messageData' => $messageData,
-            'pageInfo' => $pageInfo,
-        );
-        require_once '../vendor/autoload.php';
-        $loader = new \Twig\Loader\FilesystemLoader('.././App/Views/template');
-        $twig = new \Twig\Environment($loader);
-        $twig->addGlobal("session", $_SESSION);
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
 
+class View {
 
-        if(file_exists($temName)){
-            echo $twig->render('main_template.twig', $data);
-        }
-        else{
-            Router::get404();
-        }
+  public function getTemplate($templateName, $status = NULL, $errors = NULL, $messageData = NULL, $pageInfo = NULL) {
+    $templateDir = "../App/Views/template/$templateName";
+    $data = [
+      'templateName' => $templateName,
+      'status' => $status,
+      'errors' => $errors,
+      'messageData' => $messageData,
+      'pageInfo' => $pageInfo,
+    ];
+    require_once '../vendor/autoload.php';
+    $loader = new FilesystemLoader('.././App/Views/template');
+    $twig = new Environment($loader, ['debug' => true,]);
+    $twig->addExtension(new \Twig\Extension\DebugExtension());
+
+    $twig->addGlobal("session", $_SESSION);
+
+    if (file_exists($templateDir)) {
+      echo $twig->render('main-template.twig', ['data' => $data]);
     }
+    else {
+      Router::get404();
+    }
+  }
+
 }

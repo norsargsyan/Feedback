@@ -2,14 +2,16 @@
 
 namespace App\Views;
 
-class MessagesView extends \Core\View
-{
+use Core\View;
 
-    public function getMessages($messageList, $pageInfo = null){
-        $this->getTemplate('messages.php', null, null, $messageList, $pageInfo);
-    }
-    public function getOneMessage($messageData){
-        $this->getTemplate('onemessage.php', null, null, $messageData);
-    }
+class MessagesView extends View {
+
+  public function getMessages($messageList, $pageInfo = NULL) {
+    $this->getTemplate('messages.twig', NULL, NULL, $messageList, $pageInfo);
+  }
+
+  public function getOneMessage($messageData) {
+    $this->getTemplate('onemessage.twig', NULL, NULL, $messageData);
+  }
 
 }

@@ -4,7 +4,8 @@
 namespace Core;
 
 
-class Controller
-{
-    public $messagePerPage = 5;
+class Controller {
+
+  public $messagePerPage = 5;
+
 }

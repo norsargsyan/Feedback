@@ -4,24 +4,27 @@
 namespace App\Controllers;
 
 
-use App\Views\HomeView;
+use App\Models\InsertModel;
+use Core\Router;
+use Core\Validate;
+use Core\View;
 
-class ValidateController extends \Core\Validate
-{
+class ValidateController extends Validate {
 
-    public function index(){
-        if (isset($_POST['message_send'])) {
-            $messageData = $this->checkMessage();
-            $sendStatus = false;
-            if($messageData[0]){
-                $insert = new \App\Models\InsertModel;
-                $sendStatus = $insert->insertMessage($messageData);
-            }
-            $homeView = new \Core\View;
-            $homeView->getTemplate('feedback.php', $sendStatus,  $messageData);
-        }
-        else{
-            \Core\Router::get404();
-        }
+  public function index() {
+    if (isset($_POST['message_send'])) {
+      $messageData = $this->checkMessage();
+      $sendStatus = FALSE;
+      if ($messageData[0]) {
+        $insert = new InsertModel;
+        $sendStatus = $insert->insertMessage($messageData);
+      }
+      $homeView = new View;
+      $homeView->getTemplate('feedback.twig', $sendStatus, $messageData);
     }
+    else {
+      Router::get404();
+    }
+  }
+
 }
