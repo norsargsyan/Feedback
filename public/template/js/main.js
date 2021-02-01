@@ -21,19 +21,16 @@ window.onload = function(){
                         title: "Message successfully deleted!",
                         icon: "success",
                     });
-                    setTimeout(isEmpty ,400);
+                    setTimeout(getReload ,400);
                 }
             }
         };
         xhttp.open("POST", "/messages/delete/" + id, true);
         xhttp.send();
     }
-    function isEmpty()
+    function getReload()
     {
-        if(document.querySelectorAll('.message-item').length  == 0)
-        {
-            document.querySelector('.form-section__title').innerHTML = 'Message list is empty';
-        }
+        location.reload();
     }
     function readItem(event)
     {

@@ -28,7 +28,7 @@
                         <a href="/messages/read/{{ item['id'] }}">
                             <div class="message-item-message">
                                 {% if item['message']|length > 600 %}
-                                    {{ item['message']|slice(0, 600) }}
+                                    {{ item['message']|slice(0, 600) }}...
                                 {% else %}
                                     {{ item['message'] }}
                                 {% endif %}
@@ -44,17 +44,31 @@
                                 <li>&#x25c0;</li>
                             </a>
                             {% endif %}
-                             {% for i in range(0, data.pageInfo['page-count'] -1) %}
-                            <a class="{%  if(data.pageInfo['current-page'] == i + 1) %}is-active{% endif %}"
-                               href="/messages/page/{{ i + 1 }}">
-                                <li>{{ i + 1 }}</li>
-                            </a>
-                            {% endfor %}
+                            {% if data.pageInfo['page-count'] > 7 %}
+                                {% for i in range(0, data.pageInfo['page-count'] -1) %}
+                                    {% if (i == 0) or (i == 1) or (i == data.pageInfo['current-page'] -2) or (i == data.pageInfo['current-page'] -1) or (i == data.pageInfo['current-page']) or (i == data.pageInfo['page-count'] - 1 ) or (i == data.pageInfo['page-count'] - 2) %}
+                                    <a class="{%  if(data.pageInfo['current-page'] == i + 1) %}is-active{% endif %}"
+                                       href="/messages/page/{{ i + 1 }}">
+                                        <li>{{ i + 1 }}</li>
+                                    </a>
+                                    {% elseif (data.pageInfo['current-page'] == i + 3) or (data.pageInfo['current-page'] == i - 2) %}
+                                        ...
+                                    {% endif %}
+                                {% endfor %}
+                            {% else %}
+                                 {% for i in range(0, data.pageInfo['page-count'] -1) %}
+                                <a class="{%  if(data.pageInfo['current-page'] == i + 1) %}is-active{% endif %}"
+                                   href="/messages/page/{{ i + 1 }}">
+                                    <li>{{ i + 1 }}</li>
+                                </a>
+                                {% endfor %}
+                            {% endif %}
                             {% if(data.pageInfo['current-page'] != data.pageInfo['page-count'])%}
                             <a href="/messages/page/{{data.pageInfo['current-page'] + 1}}">
                                 <li>&#x25ba;</li>
                             </a>
                             {% endif %}
+
                         </ul>
                     </div>
                 </div>
