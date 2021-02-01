@@ -2,9 +2,10 @@
 
 Namespace Core;
 
+use \App\Views\ErrorView;
+
 class Router
 {
-    public $itemNum;
 	public function __construct(){
         $uri = trim($_SERVER['REQUEST_URI'], '/');
         $this->run(explode('/', $uri));
@@ -24,7 +25,7 @@ class Router
             }
         }
 	    $controller = ucfirst($controllerName) . "Controller";
-        $controller = "App\Controllers\\$controller";
+        $controller = "\App\Controllers\\$controller";
         if(class_exists($controller)) {
             $controller = new $controller;
             if(method_exists($controller, $actionName) && isset($uri[2])){
@@ -43,7 +44,7 @@ class Router
 	}
 
 	public static function get404(){
-        $view = new \App\Views\ErrorView;
+        $view = new ErrorView;
         $view->index();
         die();
     }

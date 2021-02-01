@@ -2,7 +2,7 @@
 
 session_start();
 
-ini_set('display_errors', 0);
+ini_set('display_errors', 1);
 
 
 spl_autoload_register(function ($class) {

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="/template/css/style.min.css">
+</head>
+<body>
+<div class="wrapper messages">
+    <header class="header-auth">
+        <div class="header-main">
+            <a href="/"><img src="/template/img/logo.png" alt="logo"></a>
+            {% if session.username is defined  %}
+                <div class="links-elem">
+                    {{ session.username|capitalize }}
+                    <a href="/">Send Message</a>
+                    <a href="/messages">Message list</a>
+                    <a href="/sign/signout">Sign out</a>
+                </div>
+            {% else %}
+                <div class="links-elem">
+                    <a href="/">Send Message</a>
+                    <a href="/sign">Sign in</a>
+                </div>
+            {% endif %}
+
+        </div>
+    </header>
+        {% include data.templateName %}
+    <footer>
+        <div class="header-main">
+            <a href="/"><img src="/template/img/logo.png" alt="logo"></a>
+            <div class="gray-block">
+                <img src="/template/img/Rectangle59.png" alt="block">
+                <img src="/template/img/Rectangle59.png" alt="block">
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
